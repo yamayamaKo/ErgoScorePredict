@@ -3,7 +3,9 @@ from sklearn.metrics import accuracy_score, precision_score, recall_score
 from sklearn import svm
 from sklearn import linear_model
 import numpy as np
+import sklearn
 
+print(sklearn.__version__)
 def make_response(s):
     response = ""
     s = s[0]

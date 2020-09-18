@@ -1,5 +1,0 @@
-# This file may be used to create an environment using:
-# $ conda create --name <env> --file <this file>
-# platform: win-32
-numpy=1.18.5=py38h6530119_0
-scikit-learn=0.23.1=py38h25d0782_0

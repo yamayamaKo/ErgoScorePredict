@@ -1,0 +1,6 @@
+{
+    "python.pythonPath": "c:\\Users\\remuo402\\anaconda3\\envs\\botenv\\python.exe",
+    "python.linting.pylintArgs": [
+        "----extension-pkg-whitelist=lxml"
+        ]
+}

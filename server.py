@@ -1,5 +1,6 @@
 from bottle import route, run, request, template
 import ergoscore_learn
+import os
 
 @route("/pred")
 def hello():
@@ -16,5 +17,5 @@ def do_predict():
 
     return template("index",text=response_text)
     
-
-run(host="localhost",port=8080,debug=True)
+run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
+#run(host="localhost",port=8080,debug=True)

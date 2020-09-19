@@ -32,5 +32,5 @@ def do_predict():
 
     return template("index",input_text=input_text,text=response_text)
     
-#run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
-run(host="localhost",port=8080,debug=True)
+run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
+#run(host="localhost",port=8080,debug=True)

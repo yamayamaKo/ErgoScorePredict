@@ -5,18 +5,18 @@ from sklearn import linear_model
 import numpy as np
 import sklearn
 
-print(sklearn.__version__)
+#1000と2000のタイム（秒数）を受け取り、0:00.0の形にして返す
 def make_response(s):
     response = ""
     s = s[0]
-
     q, mod = divmod(s,60)
     if(mod<10):
         mod = "0" + str(mod)
     response += str(int(q))+":"+str(mod)[:4]
     return response
 
-
+#実際に予測をする関数。
+#ownは元の種目、predは予測する種目
 def predict(own,pred,input_min,sec,minisec):
     datapath = "data/20test.dat"
 
@@ -63,40 +63,3 @@ def predict(own,pred,input_min,sec,minisec):
             response = make_response(score)
 
     return response  
-
-
-
-    
-"""
-clf = linear_model.LinearRegression()
-clf.fit(twok,np.ravel(onek))
-print(clf.score(twok,onek))
-
-print(clf.predict([[400]]))
-
-clf2 = linear_model.LinearRegression()
-clf2.fit(onek,np.ravel(twok))
-print(clf2.score(onek,twok))
-
-clf3 = linear_model.LinearRegression()
-clf3.fit(onek,np.ravel(twenty))
-print(clf3.score(onek,twenty))
-
-clf4 = linear_model.LinearRegression()
-clf4.fit(twok,np.ravel(twenty))
-print(clf4.score(twok,twenty))
-
-clf5 = linear_model.LinearRegression()
-clf5.fit(twenty,np.ravel(onek))
-print(clf5.score(twenty,onek))
-
-clf6 = linear_model.LinearRegression()
-clf6.fit(twenty,np.ravel(twok))
-print(clf6.score(twenty,twok))
-
-import matplotlib.pyplot as plt
-
-plt.scatter(onek,twok)
-plt.plot(onek,clf2.predict(onek))
-print(clf2.predict([[181.00]]))
-"""
